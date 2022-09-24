@@ -1,6 +1,6 @@
 from flask import Blueprint, request, render_template
 from ..database.db import db
-from ..models.app import App
+from ..models.user import User
 
 main_routes = Blueprint("main", __name__)
 
