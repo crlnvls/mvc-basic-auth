@@ -1,6 +1,8 @@
 from ..database.db import db
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin
 
-class User(db.Model, UserMixin):
+class Users(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), nullable=False, unique=True)
     email = db.Column(db.String(100), nullable=False, unique=True)
@@ -19,3 +21,13 @@ class User(db.Model, UserMixin):
     def verify_password_hash(self, password):
 	    return check_password_hash(self.password_hash, password)
 
+    # Validate if user exists
+
+    def validate_username(self, username):
+            existing_user_username = User.query.filter_by(
+                username=username.data).first()
+            if existing_user_username:
+                raise ValidationError(
+                    'That username already exists. Please choose a different one.')
+
+    
