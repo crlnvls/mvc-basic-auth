@@ -1,4 +1,4 @@
-# Basic authentication  
+# Basic authentication SQL
 
 A basic Flask app with authentication in a MVC structure using SQL database.
 
