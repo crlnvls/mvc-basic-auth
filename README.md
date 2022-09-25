@@ -1,6 +1,6 @@
 # Basic authentication  
 
-A basic Flask app with authentication in a MVC structure.
+A basic Flask app with authentication in a MVC structure using SQL database.
 
 Demo: [https://mvc-basic-auth.herokuapp.com/](https://mvc-basic-auth.herokuapp.com/)
 
